@@ -1,22 +1,29 @@
 <template>
     <AppTonav></AppTonav>
-    <header></header>
+    <AppHeader></AppHeader>
     <div class="main">
         <RouterView/>
     </div>
-    <footer></footer>
+    <AppFooter ></AppFooter>
 </template>
 
 <script>
-import AppTonav from "../AppTonav/index.vue";
+import AppTonav from "../../components/AppTonav/index.vue";
+import AppHeader from '../../components/AppHeader/index.vue'
+import AppFooter from '../../components/AppFooter/index.vue'
+
+import {useStore} from "vuex";
 
 export default {
     name: "Layout",
-    components: {AppTonav},
+    components: {AppFooter, AppHeader, AppTonav},
     component: {AppTonav},
+    setup(){
+        const store=useStore()
+        store.dispatch('category/getList')
+    }
 }
 </script>
 
 <style scoped>
-
 </style>

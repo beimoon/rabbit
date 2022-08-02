@@ -44,6 +44,9 @@ export default {
 @import '../../assets/styles/variable.less';
 .app-topnav {
     background: #333;
+    div{
+        margin: 0 auto;
+    }
 
     ul {
         display: flex;
@@ -74,7 +77,7 @@ export default {
         }
         li:last-child{
             a{
-                border: 0px;
+                border-right: none;
             }
         }
     }
